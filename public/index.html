@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Basic Web Application - Shane Jenkins u3118500</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="container">
+                <h1 class="text-center">House Inventory Application</h1>
+                <br>
+                <div class="container text-center">
+                    <a class="btn btn-outline-success text-center" href="#" role="button">Add an Item</a>
+                    <a class="btn btn-outline-primary" href="#" role="button">Find an Item</a>
+                    <a class="btn btn-outline-warning" href="#" role="button">Update an Item</a>
+                    <a class="btn btn-outline-danger" href="#" role="button">Delete an Item</a>
+                </div>
+                <br>
+                <form method="post" class="was-validated">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" name="username" id="username" required minlength="5" maxlength="15">
+                                <small id="usernameHelp" class="form-text text-muted">Password must be 5-15 characters long and only contain letters. No spaces or special characters.
+                                </small>
+                            </div>
+                            <div class="col">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" name="password" id="password" required minlength="8" maxlength="15">
+                                <small id="passwordHelp" class="form-text text-muted">Password must be 8-15 characters long and only contain letters. No spaces or special characters.
+                                </small>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="item">Item:</label>
+                                <input type="text" class="form-control" name="item" id="item" required>
+                            </div>
+                            <div class="col">
+                                <label for="room">Room:</label>
+                                <input type="text" class="form-control" name="room" id="room">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="make">Make/Brand:</label>
+                                <input type="text" class="form-control" name="make" id="make">
+                            </div>
+                            <div class="col">
+                                <label for="model">Model:</label>
+                                <input type="text" class="form-control" name="model" id="model">
+                            </div>
+                            <div class="col">
+                                <label for="serial-number">Serial Number:</label>
+                                <input type="text" class="form-control" name="serial-number" id="serial-number">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="price">Purchase Price:</label>
+                                <input type="number" class="form-control" name="price" id="price">
+                            </div>
+                            <div class="col">
+                                <label for="date">Purchase Date:</label>
+                                <input type="date" class="form-control" name="date" id="date">
+                            </div>
+                            <div class="col">
+                                <label for="place">Place of Purchase:</label>
+                                <input type="text" class="form-control" name="place" id="place">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="col">
+                                <span>Receipt:</span>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="receipt-yes" id="receipt-yes" value="yes">
+                                    <label class="form-check-label" for="receipt-yes">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="receipt-no" id="receipt-no" value="no">
+                                    <label class="form-check-label" for="receipt-no">No</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <span>Family heirloom or antique:</span>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="antique-yes" id="antique-yes" value="yes">
+                                    <label class="form-check-label" for="antique-yes">Yes</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="antique-no" id="antique-no" value="no">
+                                    <label class="form-check-label" for="antique-no">No</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="picture">
+                                    <label class="custom-file-label" for="picture">Upload a picture...</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <label for="description">Description</label>
+                        <textarea class="form-control is-invalid" id="description" placeholder="Add a description to the text area"></textarea>
+                        <br>
+                        <input type="submit" value="Add Item" id="submit" class="btn btn-outline-success">
+                        <input type="reset" value="Clear Item" id="clear" class="btn btn-outline-warning">
+                        </div>
+                </form>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
