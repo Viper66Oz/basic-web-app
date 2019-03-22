@@ -3,25 +3,26 @@
 if (isset($_POST['submit'])) {
     require "../config.php";
     try {
-        $connection = new PDO($dsn, $username, $password, $otions);
+        $connection = new PDO($dsn, $username, $password, $options);
         $new_work = array(
             "item" => $_POST['item'],
             "room" => $_POST['room'],
-            "make_brand" => $_POST['make_brand'],
+            "makebrand" => $_POST['makebrand'],
             "model" => $_POST['model'],
-            "serial_number" => $_POST['serial_number'],
-            "purchase_price" => $_POST['purchase_price'],
-            "purchase_date" => $_POST['purchase_date'],
-            "receipt" => $_POST['receipr'],
-            "heirloom_antique" => $_POST['heirloom_antique'],
+            "serialnumber" => $_POST['serialnumber'],
+            "purchaseprice" => $_POST['purchaseprice'],
+            "purchasedate" => $_POST['purchasedate'],
+            "purchaseplace" => $POST['purchaseplace'],
+            "receipt" => $_POST['receipt'],
+            "heirloomantique" => $_POST['heirloomantique'],
             "picture" => $_POST['picture'],
             "description" => $_POST['description'],
         );
-        $sql = "INSERT INTO works (item, room, make_brand, model, serial_number, purchase_price, purchase_date, receipt, heirloom_antique, picture, description) VALUES (:item, :room, :make_brand, :model, :serial_number, :purchase_price, :purchase_date, :receipt, :heirloom_antique, :picture, :description)";
+        $sql = "INSERT INTO works (item, room, make_brand, model, serial_number, purchase_price, purchase_date, receipt, heirloom_antique, picture, description) VALUES (:item, :room, :make_brand, :model, :serial_number, :purchase_price, :purchase_date, :purchaseplace, :receipt, :heirloom_antique, :picture, :description)";
         $statement = $connection->prepare($sql);
-        $statement->execute($new-work);
-        }catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getmessage();
+        $statement->execute($new_work);
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
     }
 }
 ?>
@@ -59,31 +60,31 @@ if (isset($_POST['submit'])) {
         <br>
         <div class="form-row">
             <div class="col">
-                <label for="make">Make/Brand:</label>
-                <input type="text" class="form-control" name="make" id="make">
+                <label for="makebrand">Make/Brand:</label>
+                <input type="text" class="form-control" name="makebrand" id="makebrand">
             </div>
             <div class="col">
                 <label for="model">Model:</label>
                 <input type="text" class="form-control" name="model" id="model">
             </div>
             <div class="col">
-                <label for="serial-number">Serial Number:</label>
-                <input type="text" class="form-control" name="serial-number" id="serial-number">
+                <label for="serialnumber">Serial Number:</label>
+                <input type="text" class="form-control" name="serialnumber" id="serialnumber">
             </div>
         </div>
         <br>
         <div class="form-row">
             <div class="col">
-                <label for="price">Purchase Price:</label>
-                <input type="number" class="form-control" name="price" id="price">
+                <label for="purchaseprice">Purchase Price:</label>
+                <input type="number" class="form-control" name="purchaseprice" id="purchaseprice">
             </div>
             <div class="col">
-                <label for="date">Purchase Date:</label>
-                <input type="date" class="form-control" name="date" id="date">
+                <label for="purchasedate">Purchase Date:</label>
+                <input type="date" class="form-control" name="purchasedate" id="purchasedate">
             </div>
             <div class="col">
-                <label for="place">Place of Purchase:</label>
-                <input type="text" class="form-control" name="place" id="place">
+                <label for="purchaseplace">Place of Purchase:</label>
+                <input type="text" class="form-control" name="purchaseplace" id="purchaseplace">
             </div>
         </div>
         <br>
