@@ -12,7 +12,7 @@
                 <h1 class="text-center">House Inventory Application</h1>
                 <br>
                 <div class="container text-center">
-                    <a class="btn btn-outline-success text-center" href="#" role="button">Add an Item</a>
+                    <a class="btn btn-outline-success text-center" href="create.php" role="button">Add an Item</a>
                     <a class="btn btn-outline-primary" href="#" role="button">Find an Item</a>
                     <a class="btn btn-outline-warning" href="#" role="button">Update an Item</a>
                     <a class="btn btn-outline-danger" href="#" role="button">Delete an Item</a>
