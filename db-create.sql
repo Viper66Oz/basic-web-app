@@ -14,7 +14,7 @@ CREATE TABLE works (
     purchaseplace VARCHAR (30) NOT NULL,
     receipt VARCHAR(10) NOT NULL,
     heirloomantique VARCHAR(10) NOT NULL,
-    picture BLOB NOT NULL,
+    picture BLOB NULL,
     description VARCHAR(500) NOT NULL,
     date TIMESTAMP
 );

@@ -1,5 +1,6 @@
 <?php
 require "../config.php";
+require "common.php";
 try {
     $connection = new PDO($dsn, $username, $password, $options);
     $sql = "SELECT * FROM works";

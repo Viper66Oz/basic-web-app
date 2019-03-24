@@ -1,6 +1,14 @@
 <?php
-if (isset($_POST['submit'])) {
+
     require "../config.php";
+    
+//  BEN: be sure to include the common file which contains the 'escape' funciton, otherwise you'll get a: "Uncaught Error: Call to undefined function escape" error
+
+    require "common.php";
+
+//    BEN: rather than having to load them on button click, let's just show the results on page load
+// this will look nice once formatted
+
     try {
         $connection = new PDO($dsn, $username, $password, $options);
         $sql = "SELECT * FROM works";
@@ -10,13 +18,12 @@ if (isset($_POST['submit'])) {
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
-}
+
 ?>
 <?php include"templates/header.php"; ?>
-<?php
-if (isset($_POST['submit'])) {
-    if ($result && $statement->rowCount() > 0) { ?>
+
 <h2>Item List</h2>
+
 <?php foreach($result as $row) { ?>
 <p>
     ID:
@@ -34,13 +41,14 @@ if (isset($_POST['submit'])) {
     Picture:<?php echo $row['picture']; ?><br>
     Description:<?php echo $row['description']; ?><br>
 </p>
-<?php ?>
+
 <hr>
 <?php };
-                                               };
-};
+
 ?>
+<!--
 <form method="post">
     <input class="btn btn-outline-success" type="submit" name="submit" value="View All">
 </form>
+-->
 <?php include"templates/footer.php"; ?>
