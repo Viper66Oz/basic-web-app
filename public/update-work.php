@@ -63,59 +63,56 @@ if (isset($_GET['id'])) {
 };
 ?>
 <?php include "templates/header.php"; ?>
-<?php if (isset($_POST['submit']) && $statement) : ?>
-<p>Item successfully updated.</p>
-<?php endif; ?>
-<h2>Edit an item</h2>
+<h2>Update selected item</h2>
 <form method="post" class="was-validated">
     <div class="form-group">
         <div class="form-row">
-            <div class="col">
+            <!--<div class="col-sm">
                 <label for="id">ID:</label>
                 <input type="text" class="form-control" name="id" id="id" value="<?php echo escape($item['id']); ?>" >
-            </div>
-            <div class="col">
+            </div>-->
+            <div class="col-sm">
                 <label for="item">Item:</label>
                 <input type="text" class="form-control" name="item" value="<?php echo escape($item['item']); ?>" required>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="item">Room:</label>
                 <input type="text" class="form-control" name="room" value="<?php echo escape($item['room']); ?>" required>
             </div>
         </div>
         <br>
         <div class="form-row">
-            <div class="col">
+            <div class="col-sm">
                 <label for="item">Make/Brand:</label>
                 <input type="text" class="form-control" name="makebrand" value="<?php echo escape($item['makebrand']); ?>" required>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="item">Model:</label>
                 <input type="text" class="form-control" name="model" value="<?php echo escape($item['model']); ?>" required>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="item">Serial Number:</label>
                 <input type="text" class="form-control" name="serialnumber" value="<?php echo escape($item['serialnumber']); ?>" required>
             </div>
         </div>
         <br>
         <div class="form-row">
-                <div class="col">
+                <div class="col-sm">
                     <label for="item">Purchase Price:</label>
                     <input type="number" class="form-control" name="purchaseprice" value="<?php echo escape($item['purchaseprice']); ?>" required>
                 </div>
-                <div class="col">
+                <div class="col-sm">
                     <label for="item">Purchase Date:</label>
                     <input type="date" class="form-control" name="purchasedate" value="<?php echo escape($item['purchasedate']); ?>" required>
                 </div>
-                <div class="col">
+                <div class="col-sm">
                     <label for="item">Place of Purchase:</label>
                     <input type="text" class="form-control" name="purchaseplace" value="<?php echo escape($item['purchaseplace']); ?>" required>
                 </div>
             </div>
         <br>
         <div class="form-row">
-            <div class="col">
+            <div class="col-sm">
                 <span>Receipt:</span>
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="receipt" id="receipt-yes" value="<?php echo escape($item['receipt']); ?>" required>
@@ -126,7 +123,7 @@ if (isset($_GET['id'])) {
                     <label class="form-check-label" for="receipt-no">No</label>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <span>Family heirloom or antique:</span>
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="heirloomantique" id="antique-yes" value="<?php echo escape($item['heirloomantique']); ?>" required>
@@ -137,7 +134,7 @@ if (isset($_GET['id'])) {
                     <label class="form-check-label" for="antique-no">No</label>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" name="picture" value="<?php echo escape($item['picture']); ?>">
                     <label class="custom-file-label" for="picture">Upload a picture...</label>
@@ -148,7 +145,7 @@ if (isset($_GET['id'])) {
         <div class="form-row">
             <div class="col-sm">
                 <label for="item">Description:</label>
-                <input type="text" class="form-control" name="description" value="<?php echo escape($item['description']); ?>" required>
+                <input type="text" class="form-control" name="description" value="<?php echo escape($item['description']); ?>">
             </div>
         </div>
         <br>
@@ -159,35 +156,12 @@ if (isset($_GET['id'])) {
         </div>
     </div>
 </form>
-<!--<form method="post">
-    <label for="id">ID</label>
-    <input type="text" name="id" id="id" value="<?php echo escape($item['id']); ?>" >
-    <label for="item">Item:</label>
-    <input type="text" name="item" value="<?php echo escape($item['item']); ?>">
-    <label for="item">Room:</label>
-    <input type="text" name="room" value="<?php echo escape($item['room']); ?>">
-    <label for="item">Make/Brand:</label>
-    <input type="text" name="makebrand" value="<?php echo escape($item['makebrand']); ?>">
-    <label for="item">Model:</label>
-    <input type="text" name="model" value="<?php echo escape($item['model']); ?>">
-    <label for="item">Serial Number:</label>
-    <input type="text" name="serialnumber" value="<?php echo escape($item['serialnumber']); ?>">
-    <label for="item">Purchase Price:</label>
-    <input type="text" name="purchaseprice" value="<?php echo escape($item['purchaseprice']); ?>">
-    <label for="item">Purchase Date:</label>
-    <input type="text" name="purchasedate" value="<?php echo escape($item['purchasedate']); ?>">
-    <label for="item">Place of Purchase:</label>
-    <input type="text" name="purchaseplace" value="<?php echo escape($item['purchaseplace']); ?>">
-    <label for="item">Receipt:</label>
-    <input type="text" name="receipt" value="<?php echo escape($item['receipt']); ?>">
-    <label for="item">Heirloom or Antique:</label>
-    <input type="text" name="heirloomantique" value="<?php echo escape($item['heirloomantique']); ?>">
-    <label class="custom-file-label" for="picture">Upload a picture...</label>
-    <input type="file" class="custom-file-input" id="picture" name="picture" value="<?php echo escape($item['picture']); ?>">
-    <label for="item">Description:</label>
-    <input type="text" name="description" value="<?php echo escape($item['description']); ?>">
-    <label for="date">Work Date</label>
-    <input type="text" name="date" id="date" value="<?php echo escape($item['date']); ?>">
-    <input type="submit" name="submit" value="Update">
-</form>-->
+<hr>
+<?php if (isset($_POST['submit']) && $statement) : ?>
+<div class="row">
+    <div class="col-sm alert alert-success">
+        Item successfully updated.
+    </div>
+</div>
+<?php endif; ?>
 <?php include"templates/footer.php"; ?>
