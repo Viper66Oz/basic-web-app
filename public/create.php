@@ -65,11 +65,9 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <?php include "templates/header.php"; ?>
-<!--<?php if (isset($_POST['submit']) && $statement) { ?>
-<p>Item successfully added.</p>
-<?php } ?>-->
 <form method="post" class="was-validated">
     <div class="form-group">
+        <!--This is for the username/password area of the form-->
         <!--<div class="form-row">
             <div class="col">
                 <label for="username">Username:</label>
@@ -87,48 +85,48 @@ if (isset($_POST['submit'])) {
         <br>
  
         <div class="form-row">
-            <div class="col">
+            <div class="col-sm">
                 <label for="item">Item:</label>
                 <input type="text" class="form-control" name="item" id="item" required>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="room">Room:</label>
                 <input type="text" class="form-control" name="room" id="room" required>
             </div>
         </div>
         <br>
         <div class="form-row">
-            <div class="col">
+            <div class="col-sm">
                 <label for="makebrand">Make/Brand:</label>
                 <input type="text" class="form-control" name="makebrand" id="makebrand" required>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="model">Model:</label>
                 <input type="text" class="form-control" name="model" id="model" required>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="serialnumber">Serial Number:</label>
                 <input type="text" class="form-control" name="serialnumber" id="serialnumber" required>
             </div>
         </div>
         <br>
         <div class="form-row">
-            <div class="col">
+            <div class="col-sm">
                 <label for="purchaseprice">Purchase Price:</label>
                 <input type="number" class="form-control" name="purchaseprice" id="purchaseprice" required>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="purchasedate">Purchase Date:</label>
                 <input type="date" class="form-control" name="purchasedate" id="purchasedate" required>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <label for="purchaseplace">Place of Purchase:</label>
                 <input type="text" class="form-control" name="purchaseplace" id="purchaseplace" required>
             </div>
         </div>
         <br>
         <div class="form-row">
-            <div class="col">
+            <div class="col-sm">
                 <span>Receipt:</span>
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="receipt" id="receipt-yes" value="yes">
@@ -139,7 +137,7 @@ if (isset($_POST['submit'])) {
                     <label class="form-check-label" for="receipt-no">No</label>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <span>Family heirloom or antique:</span>
                 <div class="form-check-inline">
                     <input class="form-check-input" type="radio" name="heirloomantique" id="antique-yes" value="yes">
@@ -150,19 +148,25 @@ if (isset($_POST['submit'])) {
                     <label class="form-check-label" for="antique-no">No</label>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="picture" name="picture">
                     <label class="custom-file-label" for="picture">Upload a picture...</label>
                 </div>
             </div>
         </div>
-        <br>
-        <label for="description">Description</label>
-        <textarea class="form-control is-invalid" id="description" name="description" placeholder="Add a description to the text area"></textarea>
-        <br>
-        <input type="submit" value="Add Item" id="submit" name="submit" class="btn btn-outline-success">
-        <input type="reset" value="Clear Item" id="clear" class="btn btn-outline-warning">
+        <div class="form-row">
+            <div class="col-sm">
+                <label for="description">Description</label>
+                <textarea class="form-control is-invalid" id="description" name="description" placeholder="Add a description to the text area"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-sm alert">
+                <input type="submit" value="Add Item" id="submit" name="submit" class="btn btn-outline-success">
+                <input type="reset" value="Clear Item" id="clear" class="btn btn-outline-warning">
+            </div>
+        </div>
     </div>
 </form>
 <?php if (isset($_POST['submit']) && $statement) { ?>
