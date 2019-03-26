@@ -65,9 +65,9 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <?php include "templates/header.php"; ?>
-<?php if (isset($_POST['submit']) && $statement) { ?>
+<!--<?php if (isset($_POST['submit']) && $statement) { ?>
 <p>Item successfully added.</p>
-<?php } ?>
+<?php } ?>-->
 <form method="post" class="was-validated">
     <div class="form-group">
         <!--<div class="form-row">
@@ -165,4 +165,7 @@ if (isset($_POST['submit'])) {
         <input type="reset" value="Clear Item" id="clear" class="btn btn-outline-warning">
     </div>
 </form>
+<?php if (isset($_POST['submit']) && $statement) { ?>
+<div class="alert alert-success" role="alert">Item successfully added.</div>
+<?php } ?> 
 <?php include "templates/footer.php"; ?>
