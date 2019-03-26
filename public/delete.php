@@ -9,7 +9,10 @@ if (isset($_GET["id"])) {
         $statement = $connection->prepare($sql);
         $statement->bindValue(':id', $id);
         $statement->execute();
-        $success = "Item successfully removed";
+        $success = "<div class='row'>
+                        <div class='col-sm alert alert-success'>Item successfully deleted
+                        </div>
+                    </div>";
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
@@ -25,26 +28,61 @@ try {
 }
 ?>
 <?php include "templates/header.php"; ?>
-<h2>Remove an item</h2>
-<?php if ($success) echo $success; ?>
+<h2>Delete an item</h2>
 <?php foreach($result as $row) { ?>
-<p>
-    ID:
-    <?php echo escape($row['id']); ?><br>
-    Item:<?php echo $row['item']; ?><br>
-    Room:<?php echo $row['room']; ?><br>
-    Make/Brand:<?php echo $row['makebrand']; ?><br>
-    Model:<?php echo $row['model']; ?><br>
-    Serial Number:<?php echo $row['serialnumber']; ?><br>
-    Purchase Price:<?php echo $row['purchaseprice']; ?><br>
-    Purchase Date:<?php echo $row['purchasedate']; ?><br>
-    Purchase Place:<?php echo $row['purchaseplace']; ?><br>
-    Receipt:<?php echo $row['receipt']; ?><br>
-    Heirloom/Antique:<?php echo $row['heirloomantique']; ?><br>
-    Picture:<?php echo $row['picture']; ?><br>
-    Description:<?php echo $row['description']; ?><br>
-    <a class="btn btn-danger" role="button" href="delete.php?id=<?php echo $row['id']; ?>">Remove item</a>
-</p>
+<div class="row">
+    <!--<div class="col-sm-4 alert alert-info" role="alert">
+        <strong>ID: </strong><?php echo escape($row['id']); ?>
+    </div>-->
+    <div class="col-sm alert alert-success" role="alert">
+        <strong>Item: </strong><?php echo $row['item']; ?>
+    </div>
+    <div class="col-sm alert alert-success" role="alert">
+        <strong>Room: </strong><?php echo $row['room']; ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm alert alert-success">
+        <strong>Make/Brand: </strong><?php echo $row['makebrand']; ?>
+    </div>
+    <div class="col-sm alert alert-success">
+        <strong>Model: </strong><?php echo $row['model']; ?>
+    </div>
+    <div class="col-sm alert alert-success">
+        <strong>Serial Number: </strong><?php echo $row['serialnumber']; ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm alert alert-success">
+        <strong>Purchase Price: </strong><?php echo $row['purchaseprice']; ?>
+    </div>
+    <div class="col-sm alert alert-success">
+        <strong>Purchase Date: </strong><?php echo $row['purchasedate']; ?>
+    </div>
+    <div class="col-sm alert alert-success">
+        <strong>Place of Purchase: </strong><?php echo $row['purchaseplace']; ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm alert alert-success">
+        <strong>Receipt: </strong><?php echo $row['receipt']; ?>
+    </div>
+    <div class="col-sm alert alert-success">
+        <strong>Heirloom/Antique: </strong><?php echo $row['heirloomantique']; ?>
+    </div>
+    <div class="col-sm alert alert-success">
+        <strong>Picture: </strong><img src="<?php echo $row['picture']; ?>">
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-10 alert alert-success">
+        <strong>Description: </strong><?php echo $row['description']; ?>
+    </div>
+    <div class="col-sm-2 alert">
+        <a class="btn btn-danger float-right" role="button" href="delete.php?id=<?php echo $row['id']; ?>">Delete item</a>
+    </div>
+</div>
 <hr>
+<?php if ($success) echo $success; ?>
 <?php }; ?>
 <?php include "templates/footer.php"; ?>
