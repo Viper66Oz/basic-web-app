@@ -25,7 +25,7 @@
 <h2>Item List</h2>
 
 <?php foreach($result as $row) { ?>
-<p>
+<!--<p>
     ID:
     <?php echo escape($row['id']); ?><br>
     Item:<?php echo $row['item']; ?><br>
@@ -40,8 +40,56 @@
     Heirloom/Antique:<?php echo $row['heirloomantique']; ?><br>
     Picture:<?php echo $row['picture']; ?><br>
     Description:<?php echo $row['description']; ?><br>
-</p>
-
+</p>-->
+<div class="row">
+    <div class="col-sm-4 alert alert-info" role="alert">
+        ID: <?php echo escape($row['id']); ?>
+    </div>
+    <div class="col-sm-4 alert alert-success" role="alert">
+        Item: <?php echo $row['item']; ?>
+    </div>
+    <div class="col-sm-4 alert alert-success" role="alert">
+        Room: <?php echo $row['room']; ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 alert alert-success">
+        Make/Brand: <?php echo $row['makebrand']; ?>
+    </div>
+    <div class="col-sm-4 alert alert-success">
+        Model: <?php echo $row['model']; ?>
+    </div>
+    <div class="col-sm-4 alert alert-success">
+        Serial Number: <?php echo $row['serialnumber']; ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 alert alert-success">
+        Purchase Price: <?php echo $row['purchaseprice']; ?>
+    </div>
+    <div class="col-sm-4 alert alert-success">
+        Purchase Date: <?php echo $row['purchasedate']; ?>
+    </div>
+    <div class="col-sm-4 alert alert-success">
+        Place of Purchase: <?php echo $row['purchaseplace']; ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 alert alert-success">
+        Receipt: <?php echo $row['receipt']; ?>
+    </div>
+    <div class="col-sm-4 alert alert-success">
+        Heirloom/Antique: <?php echo $row['heirloomantique']; ?>
+    </div>
+    <div class="col-sm-4 alert alert-success">
+        Picture: <img src="<?php echo $row['picture']; ?>">
+    </div>
+</div>
+<div class="row">
+    <div class="col alert alert-success">
+        Description: <?php echo $row['description']; ?>
+    </div>
+</div>
 <hr>
 <?php };
 
