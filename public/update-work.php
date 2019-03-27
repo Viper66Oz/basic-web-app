@@ -114,51 +114,32 @@ if (isset($_GET['id'])) {
                 <div class="col-sm">
                     <span>Receipt:</span>
                     <div class="form-check-inline">
-
-                        <!--                        BEN: New radio button logic to return correct value. 
-                            You can correct spacing in CSS -->
-
+                        <!--BEN: New radio button logic to return correct value. You can correct spacing in CSS-->
                         <input class="form-check-input" type="radio" name="receipt" id="receipt-yes" value="yes" required <?php echo ($item[ 'receipt']=='yes' ) ? 'checked' : ''; ?>>
-                        <label class="form-check-label" for="receipt-yes">Yes</label>
-
+                        <label class="form-check-label inline-spacer" for="receipt-yes">Yes</label>
                         <input class="form-check-input" type="radio" name="receipt" id="receipt-No" value="no" required <?php echo ($item[ 'receipt']=='no' ) ? 'checked' : ''; ?>>
                         <label class="form-check-label" for="receipt-yes">No</label>
-
-
-                        <!--
-                        <input class="form-check-input" type="radio" name="receipt" id="receipt-yes" value="<?php echo escape($item['receipt']); ?>" required>
-                        <label class="form-check-label" for="receipt-yes">Yes</label>
--->
+                        <!--<input class="form-check-input" type="radio" name="receipt" id="receipt-yes" value="<?php echo escape($item['receipt']); ?>" required>
+                        <label class="form-check-label" for="receipt-yes">Yes</label>-->
                     </div>
-                    <!--
-                    <div class="form-check-inline">
+                    <!--<div class="form-check-inline">
                         <input class="form-check-input" type="radio" name="receipt" id="receipt-no" value="<?php echo escape($item['receipt']); ?>" required>
                         <label class="form-check-label" for="receipt-no">No</label>
-                    </div>
--->
+                    </div>-->
                 </div>
                 <div class="col-sm">
                     <span>Family heirloom or antique:</span>
                     <div class="form-check-inline">
-                        <!--                        <input class="form-check-input" type="radio" name="heirloomantique" id="antique-yes" value="<?php //echo escape($item['heirloomantique']); ?>" required>-->
-
-
+                        <!--<input class="form-check-input" type="radio" name="heirloomantique" id="antique-yes" value="<?php //echo escape($item['heirloomantique']); ?>" required>-->
                         <input class="form-check-input" type="radio" name="heirloomantique" id="antique-yes" value="yes" required <?php echo ($item[ 'heirloomantique']=='yes' ) ? 'checked' : ''; ?>>
-                        <label class="form-check-label" for="antique-yes">Yes</label>
-
+                        <label class="form-check-label inline-spacer" for="antique-yes">Yes</label>
                         <input class="form-check-input" type="radio" name="heirloomantique" id="antique-no" value="no" required <?php echo ($item[ 'heirloomantique']=='no' ) ? 'checked' : ''; ?>>
                         <label class="form-check-label" for="antique-no">No</label>
-
-
-
-
                     </div>
-                    <!--
-<div class="form-check-inline">
-    <input class="form-check-input" type="radio" name="heirloomantique" id="antique-no" value="<?php echo escape($item['heirloomantique']); ?>" required>
-    <label class="form-check-label" for="antique-no">No</label>
-</div>
--->
+                    <!--<div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="heirloomantique" id="antique-no" value="<?php echo escape($item['heirloomantique']); ?>" required>
+                    <label class="form-check-label" for="antique-no">No</label>
+                </div>-->
                 </div>
                 <div class="col-sm">
                     <div class="custom-file">
