@@ -3,3 +3,6 @@
 .id-hide {
     display: none;
 }
+.form-check-label.inline-spacer{
+    margin-right: 12px;
+}
